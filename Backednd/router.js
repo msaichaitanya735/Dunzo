@@ -85,6 +85,12 @@ router.post('/addstore',(req,res)=>{
     })
 })
 
+router.delete('/getstore',async(req,res)=>{
+    const id=req.query._id;
+    console.log(id)
+    const store = await schema.findByIdAndRemove(req.query._id)
+})
+
 router.get('/getstores',async(req,res)=>{
     const stores =await schema.find()
     res.send(stores)

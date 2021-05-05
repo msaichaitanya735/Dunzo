@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import AddingProducts from './AddingProducts';
+import { useHistory } from 'react-router';
+
 
 const EditIdvStore = (props) => {
+    const history=useHistory()
     const [title,setTitle]=useState('');
     const [img_url,setImg_url]=useState('');
     const [desc,setDesc]=useState('');
@@ -61,17 +64,18 @@ const EditIdvStore = (props) => {
             category:category,
             description:desc,
             location:JSON.stringify(selectedLocations),
-            items:JSON.stringify(items)
+            items:JSON.stringify(nava)
         }
         console.log(newStore)
         axios.put(`http://localhost:5000/getidvstore?_id=${store._id}`,newStore)
+        history.goBack()
         
     }
     return (
         <div style={{marginTop:'50px'}}>
             <div>
         <div style={{width:'99%',backgroundColor:'rgb(239, 127, 67)',height:'250px',marginTop:'50px',borderRadius:'10px',marginLeft:'10px',textAlign:'center'}}>
-            <div className='container' style={{color:'white',padding:'100px'}}><h4 style={{fontSize:'40px',fontWeight:'300'}}>Editing the store </h4>
+            <div className='container' style={{color:'black',padding:'100px'}}><h4 style={{fontSize:'40px',fontWeight:'300'}}>Editing the store </h4>
         </div>
         </div>
         <div className='container' style={{marginTop:'10px',boxShadow: 'rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px' ,textAlign:'center'}}>

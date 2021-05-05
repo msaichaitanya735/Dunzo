@@ -8,13 +8,13 @@ const EditStore = () => {
     const [search,setSearch]=useState('')
     const [store,setStore]=useState([]);
     const [filter,setFilter]=useState([]);
-    const [temp,setTemp]=useState(['1','2'])
+    const [temp,setTemp]=useState('')
     useEffect(()=>{
       setTimeout(()=>{
         console.log('hello');
         setSearch((localStorage.getItem('selectedservice').toLowerCase().trim()))
       console.log(search)},1000)
-    },[])
+    },[],[temp])
     
 
     useEffect(()=>{
@@ -45,11 +45,9 @@ const EditStore = () => {
             {
               filter.map((stores,i)=>{
                 const del=()=>{
+                  axios.delete(`http://localhost:5000/getstore?_id=${stores}`)
+                }
 
-                }
-                const edit=()=>{
-                  
-                }
                 return(
                   <div key={i} style={{width:'500px'}}>
                   <div >
@@ -61,7 +59,11 @@ const EditStore = () => {
                             <h4>{stores.title}</h4>
                                 <h6>{stores.description}</h6>
                                 <Link to={'/admin/editidvstore/'+stores._id}><button style={{margin:'10px',cursor: 'pointer',fontSize: '14px',color: 'rgb(255, 255, 255)',background: 'rgb(255, 102, 102)',padding: '8px 20px',borderRadius: '30px',fontWeight: 'bold'}}>Edit</button></Link>
-                                <button onClick={edit} style={{margin:'10px',cursor: 'pointer',fontSize: '14px',color: 'rgb(255, 255, 255)',background: 'rgb(255, 102, 102)',padding: '8px 20px',borderRadius: '30px',fontWeight: 'bold'}}>Delete</button>
+                                <button onClick={()=>{
+                                  console.log(stores._id)
+                                  setTemp(stores._id)
+                                  axios.delete(`http://localhost:5000/getstore?_id=${stores._id}`)
+                                }} style={{margin:'10px',cursor: 'pointer',fontSize: '14px',color: 'rgb(255, 255, 255)',background: 'rgb(255, 102, 102)',padding: '8px 20px',borderRadius: '30px',fontWeight: 'bold'}}>Delete</button>
                             </div>
                             </div>
                   </div>

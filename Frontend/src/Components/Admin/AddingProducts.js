@@ -6,8 +6,8 @@ import './products.css'
 
 const AddingProducts = ({items,onChange}) => {
     const [products,setProducts]=useState([])
-    const [price,setPrice]=useState('')
-    const [unit,setUnit]= useState('')
+    const [prices,setPrices]=useState('')
+    const [units,setUnits]= useState('')
     const [searchWord,setSearchWord]=useState('');
     const [filterData,setFilterData]=useState([])
     useEffect(()=>{
@@ -46,8 +46,8 @@ const AddingProducts = ({items,onChange}) => {
                         var item={
                             name:data.name,
                             image:data.image,
-                            unit:unit,
-                            price:price
+                            unit:units,
+                            price:prices
                         }
                         onChange([...items,item])
                         console.log(items )
@@ -62,8 +62,8 @@ const AddingProducts = ({items,onChange}) => {
                             </div>
                             <div style={{display:'inline-block',textAlign:'center'}}>                            
                             <h4>{data.name}</h4>
-                                <h4>Unit:<input type='text' style={{borderRadius:'10px',width:'15vh',padding:'5px',margin:'5px'}} onChange={(e)=>{setUnit(e.target.value)}}/></h4>
-                                <h4>Price:<input type='text' style={{borderRadius:'10px',width:'15vh',padding:'5px',margin:'5px'}} onChange={(e)=>{setPrice(e.target.value)}}/></h4>
+                                <h4>Unit:<input type='text' style={{borderRadius:'10px',width:'15vh',padding:'5px',margin:'5px'}} onChange={(e)=>{setUnits(e.target.value)}}/></h4>
+                                <h4>Price:<input type='text' style={{borderRadius:'10px',width:'15vh',padding:'5px',margin:'5px'}} onChange={(e)=>{setPrices(e.target.value)}}/></h4>
                                 <button onClick={add} style={{margin:'10px',cursor: 'pointer',fontSize: '14px',color: 'rgb(255, 255, 255)',background: 'rgb(255, 102, 102)',padding: '8px 20px',borderRadius: '30px',fontWeight: 'bold'}}>Add</button>
                             </div>
                             </div>
