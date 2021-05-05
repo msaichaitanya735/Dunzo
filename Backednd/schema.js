@@ -7,8 +7,8 @@ var storeSchema =  new Schema({
     img_url:String,
     category:String,
     description:String,
-    discount:String,
     location:String,
+    items:String
 })
 
 module.exports = mongoose.model('storeTable',storeSchema)
