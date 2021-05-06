@@ -1,1 +1,1 @@
-web:cd Backednd && node server.js
+web:node Backednd/server.js
