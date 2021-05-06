@@ -6,9 +6,9 @@ const serviceSchema = require('./ServiceSchema')
 const locationSchema =require('./locationSchema')
 const productschema = require('./productSchema')
 
-router.get('/',(req,res)=>{
-    res.send('Heyy')
-})
+// router.get('/',(req,res)=>{
+//     res.send('Heyy')
+// })
 
 router.post('/addproduct',(req,res)=>{
     var newProduct = new productschema({

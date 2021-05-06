@@ -1,0 +1,21 @@
+{
+  "name": "dunzo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start":"cd Backednd && nodemon server.js",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false cd Backednd && npm install && cd .. && cd Frontend && npm install && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msaichaitanya735/Dunzo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msaichaitanya735/Dunzo/issues"
+  },
+  "homepage": "https://github.com/msaichaitanya735/Dunzo#readme"
+}
