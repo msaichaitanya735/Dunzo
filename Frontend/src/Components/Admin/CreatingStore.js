@@ -8,9 +8,11 @@ const CreatingStore = (props) => {
     const [img_url,setImg_url]=useState('');
     const [desc,setDesc]=useState('');
     const [selectedLocations,setSelectedLocations]=useState([])
+    const [availLocations,setAvailLocations]=useState([])
     const [checked,setChecked]=useState(false)
     const [locations,setLocations]=useState([]);
     const [items,setItems]=useState([])
+    // const [service,setService]=useState([])
     useEffect(()=>{
         axios.get('http://localhost:5000/getlocation').then((res)=>setLocations(res.data))
     })
@@ -27,7 +29,28 @@ const CreatingStore = (props) => {
             items:JSON.stringify(items)
         }
         console.log(newStore)
-        axios.post('http://localhost:5000/addstore',newStore).then((res)=>console.log('done'))
+        // axios.post('http://localhost:5000/addstore',newStore).then((res)=>console.log('done'))
+        // var available_services=[]
+        console.log(locations)
+        console.log(availLocations)
+        availLocations.forEach((loc)=>{
+            // console.log(loc)
+            //  available_services=[...available_services,loc]
+            // console.log(JSON.stringify(available_services))
+            var servi=[]
+            if(loc.available_services){
+             servi=[...(JSON.parse(loc.available_services))]
+            }
+            console.log(servi)
+            if(!(servi.includes(localStorage.getItem('selectedservice')))){
+            const servicelocation={
+                available_service:JSON.stringify([...servi,localStorage.getItem('selectedservice')])
+            }
+            console.log(servicelocation)
+            axios.put(`http://localhost:5000/getlocation/?_id=${loc._id}`,servicelocation).then((res)=>console.log('updated'))
+        }
+        })
+
     }
     return (
         <div style={{marginTop:'50px'}}>
@@ -56,8 +79,11 @@ const CreatingStore = (props) => {
                     return(
                         <div key={i}>
                         <input type='checkbox' id={details.location_name} value={details.location_name}  onChange={(e)=>{
-                            if(selectedLocations.indexOf(e.target.value)===-1)
+                            if(selectedLocations.indexOf(e.target.value)===-1){
+
                             setSelectedLocations([...selectedLocations,e.target.value])
+                            setAvailLocations([...availLocations,details])
+                            }
                             else{
                                 selectedLocations.splice(selectedLocations.indexOf(e.target.value),1)
                             }}}/>

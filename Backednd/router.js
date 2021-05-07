@@ -46,6 +46,17 @@ router.post('/addlocation',(req,res)=>{
     })
 })
 
+router.put('/getlocation',async(req,res)=>{
+    const name= req.query._id;
+    console.log(name)
+    const location = await locationSchema.findByIdAndUpdate(req.query._id,
+        {
+            available_services:req.body.available_service
+        })
+    location.save()
+    res.send(location)
+})
+
 router.get('/getlocation',async(req,res)=>{
     const locations = await locationSchema.find()
     res.send(locations)
@@ -69,6 +80,7 @@ router.post('/addservice',(req,res)=>{
         res.status(400).send(e);
     })
 })
+
 router.post('/addstore',(req,res)=>{
     var newStore = new schema({
         title:req.body.title,
@@ -139,6 +151,13 @@ router.get('/getmeat',async(req,res)=>{
     res.send(stores)
 })
 
+
+router.get('/getloc',async(req,res)=>{
+    const name = req.query.name;    
+    console.log(name);
+    const loc = await locationSchema.find({location_name:req.query.name})
+    res.send(loc)
+})
 
 module.exports= router    
 
