@@ -7,6 +7,7 @@ var locationSchema =  new Schema({
     location_id:String,
     state:String,
     country:String,
-    map:String
+    map:String,
+    available_services:String,
 })
 module.exports = mongoose.model('locationTable',locationSchema)

@@ -8,14 +8,12 @@ const Admin = () => {
     const [selectedservice,setSelectedserrvice]=useState('')
     useEffect(()=>{
         axios.get('http://localhost:5000/getservices').then((res)=>setServices(res.data))
+        // axios.get(`http://localhost:5000/getloc/?name=Kolkata`).then((res)=>console.log(res.data));
     })
     const changed=(e)=>{
         setSelectedserrvice(e.target.value)        
     }
-    // useEffect(()=>{
-    //     console.log(selectedservice)
-    //     localStorage.setItem('selectedservice',selectedservice)
-    // },[selectedservice ])
+
     return (
         <div>
         <div style={{width:'99%',backgroundColor:'#171e30',height:'250px',marginTop:'50px',borderRadius:'10px',marginLeft:'10px',textAlign:'center'}}>
