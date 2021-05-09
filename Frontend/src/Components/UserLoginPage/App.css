@@ -1,0 +1,342 @@
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+  }
+  .details{
+    display: flex;
+    padding: 10px;
+  }
+  .details h1{
+    color: rgb(111, 117, 136);
+    font-size: 14px;
+    margin:12px 20px 0px 0px;
+  }
+  .details p{
+    margin: 7px 10px 0px 0px;
+  }
+  .location h1{
+    color: #171e30;
+    font-size: 36px;
+  }
+  .location-details p{
+    color: rgb(111, 117, 136);
+    line-height: 24px;
+    font-weight: 500;
+  }
+  .home-body{
+    width: 1100px;
+    margin: auto;
+  }
+  .nav-bar .logo img{
+    width: 122px;
+    height: 28;
+  }
+  .nav-bar .user-img img{
+    position: absolute;
+    top: 28px;
+    width: 60px;
+    border-radius: 50%;
+  }
+  .main{
+    margin: 30px;
+  }
+  .cards img{
+    width:244px;
+    height: 180px;
+    padding: 10px 10px 10px 0;
+    margin-right: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .cardSmall{
+    display: flex;
+  }
+  .mini-card img{
+    width: 40px;
+  }
+  .mini-card{
+    cursor: pointer;
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    padding: 20px 35px 16px;
+    margin: 10px;
+    box-shadow: 4px 4px 4px 0 #ccc;
+  }
+  .mini-card p{
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .User-Login-Page{
+    background: linear-gradient(100deg, #f9f9fb 30%, #23dc98 20%);
+  height: 100vh;
+  }
+  .User-Login-Page marquee img{
+    padding-top: 4px;
+    width: 100px;
+  }
+  .cp-btn span{
+    background: -webkit-linear-gradient(#087ee1, #05e8ba);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    
+  }
+  .cp-btn span:hover{
+    background: -webkit-linear-gradient(#89d4cf, #734ae8
+  );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+  }
+  .cp-btn input{
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #adadad;
+    background: none;
+    outline: none;
+  }
+  
+  .User-SignUp{
+    padding: 0 40px;
+    box-sizing: border-box;
+    width: 400px;
+    position: absolute;
+    background: #fff;
+    top: 70px;
+    left: 10px;
+  }
+  .User-SignUp-Active{
+    display: none;
+  }
+  .User-SignUp h1{
+    text-align: center;  
+  }
+  .User-SignUp{
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  form .signup{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+  }
+  .signup input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .signup label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+  }
+  .signup span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .5s;
+  }
+  .signup input:focus ~ label,
+  .signup input:valid ~ label{
+    top: -5px;
+    color: #2691d9;
+  }
+  .signup input:focus ~ span::before,
+  .signup input:valid ~ span::before{
+    width: 100%;
+  }
+  .User-Login{
+    margin-top: 60px;
+    width: 400px;
+    height: 400px;
+  }
+  .User-Login h1{
+    text-align: center;  
+  }
+  .User-Login{
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  
+  form .Login{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+   
+  }
+  .Login input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .Login label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+  }
+  .Login span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .5s;
+  }
+  .Login input:focus ~ label,
+  .Login input:valid ~ label{
+    top: -5px;
+    color: #2691d9;
+  }
+  .Login input:focus ~ span::before,
+  .Login input:valid ~ span::before{
+    width: 100%;
+  }
+  .f-password{
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6 !important;
+    cursor: pointer;
+  }
+  .f-password:hover{
+    text-decoration: underline;
+  }
+  .login-btn{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+  }
+  .login-btn:hover{
+    border-color: #2691d9;
+    transition: .5s;
+  }
+  .signup-link{
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+  }
+  .login-link a{
+    color: #2691d9;
+    text-decoration: none;
+    padding-left: 135px;
+    
+  }
+  .login-link a:hover{
+    text-decoration: underline;
+  }
+  
+  .H-logo img{
+    width: 600px;
+  }
+  .User-LS-Card{
+    width: 1400px;
+    height: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    border-radius: 0px 35px 0px 3+699999965px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: space-between;
+  }
+  .User-LS-img img{
+    margin-left: 160px ;
+  }
+  .User-LS-Logo img{
+    padding-left: 10px;
+    width: 100px;
+    animation: zoominoutsinglefeatured 7s infinite ;
+  }
+  @keyframes zoominoutsinglefeatured {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+  
+  .f-body{
+    height: 95vh;
+    background-color: #eceff4;
+  }
+  .forgot-card{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    height: 80vh;
+    margin: auto;
+    border-radius: 50px;
+  }
+  .forgot-card img{
+  
+    position: absolute;
+    width: 25%px;
+    top:0;
+    left: 180px;
+  }
+  .forgot-card .forgot-form h1{
+   
+    color: #293553;
+    font-size: 4rem;
+  }
+  .forgot-card .forgot-form p{
+    color: #293553;
+    font-size: 17px;
+  }
+  .forgot-form button{
+    background-color: #3ee577;
+  background-image: linear-gradient(315deg, #3ee577 0%, #42fcdb 74%);
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin-left: 70px;
+  }
+  .forgot-form input{
+    width: 250px;
+    height: 40px;
+    border-radius: 15px;
+  }
