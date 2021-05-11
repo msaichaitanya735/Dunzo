@@ -1,0 +1,51 @@
+.foot{
+    height: 700px;
+    width: 100%;
+    background-color: #001c2e;
+    color: white;
+}
+
+.footer_text{
+    text-align: left;
+    width: 70%;
+    position: relative;
+    left: 220px;
+    top: 60px;
+}
+
+.footer_list{
+    display: flex;
+}
+
+.dunzo{
+    margin-top: 100px;
+    margin-left: 80px;
+}
+
+.dunzo_img{
+    height: 4.5rem;
+    width: 4.5rem;
+    margin-left: 220px;
+    margin-top: 100px;
+}
+
+.serviceable_cities{
+    margin-top: 100px;
+    margin-left: 80px;
+}
+
+.get_in_touch{
+    margin-top: 100px;
+    margin-left: 80px;
+}
+
+.text_link{
+    text-decoration: none;
+    color: white;
+}
+
+.dunzo_man_img{
+    height: 15rem;
+    margin-top: 100px;
+    margin-left: 40px;
+}

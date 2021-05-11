@@ -1,0 +1,15 @@
+.top_picks_container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-bottom: 12rem;
+    margin-left: 50px;
+}
+
+.top_picks_container .image{
+    height: 11rem;
+    width: 17rem;
+}
+
+.top_picks_container .rest{
+    margin-left: 60px;
+}
