@@ -1,11 +1,10 @@
-import Dashboard from './Components/Dashboard/Dashboard';
+import './App.css';
 import Routing from './Components/Admin/Routing';
 
 function App() {
   return (
     <div className="App">
         <Routing/>
-        <Dashboard/>
     </div>
   );
 }
