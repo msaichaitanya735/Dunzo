@@ -2,7 +2,6 @@ import React from 'react'
 import axios from "axios";
 import "./App.css";
 import Cookie from "js-cookie";
-import {Link} from "react-router-dom";
 import slide1 from "./Assets/images/g1.PNG"
 import slide2 from "./Assets/images/g2.PNG"
 import slide3 from "./Assets/images/g3.PNG"
@@ -25,7 +24,10 @@ const handleLogin = async e => {
   if (response.data.token) {
       Cookie.set("jwt",response.data.token);
       console.log(response.data.token)
-      props.history.push("/user");
+      props.history.push("/dashboard");
+  }
+  else{
+    alert("Please click on the activation link from your Email")
   }
   
   
@@ -35,7 +37,7 @@ const handleSignup = async e => {
 
   const response = await axios.post("http://localhost:5000/auth/signup", { data: userData});
   console.log(response.data)
-  alert(response.data)
+  alert("email sent")
  
   
 };
@@ -74,9 +76,6 @@ const generatePassword = e =>{
                      <span></span>
                      <label>password</label>
                      </div>
-                     <Link to="/fpass">
-                     <div className="f-password"><p>Forgot Password?</p></div>
-                     </Link>
                      <button className="login-btn" onClick={handleLogin}>Login</button>
                      <div className="signup-link">Not a member? <a href="#"  onClick={onClickHeader} >Signup</a> 
                      </div>

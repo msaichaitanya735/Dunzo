@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const UserModel = require("./UserModel.js");
+const UserModel = require("./UserSchema.js");
 const jwt = require("jsonwebtoken");
 const sendMailer = require("./SendMailer");
 
@@ -33,7 +33,8 @@ router.get("/verify/:id", async (req, res) => {
   const user = await UserModel.findOne({ _id: id });
   if (user) {
   	user.active = true;
-    return res.json({ success: true });
+      user.save();
+    res.redirect("http://localhost:3000/login");
   } else {
   	return res.json({ message: "User doesn't exist" });
   }
@@ -46,11 +47,12 @@ router.post("/login", async (req,res) =>{
     });
     const user = await UserModel.findOne({username: username});
     if(user){
-        if(user.password === password ) {
+        if(user.password === password && user.active === true) {
             const payload = {
                 username,
                 email:user.email,
-                phonenumber:user.phonenumber  
+                phonenumber:user.phonenumber,
+                id:user._id  
             };
             jwt.sign(payload, "secret", { expiresIn: "1d"}, (err, token) => {
                 if (err) console.log(err);

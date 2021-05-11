@@ -5,7 +5,7 @@ const schema = require('./schema')
 const serviceSchema = require('./ServiceSchema')
 const locationSchema =require('./locationSchema')
 const productschema = require('./productSchema')
-
+const UserSchema = require('./UserSchema') 
 // router.get('/',(req,res)=>{
 //     res.send('Heyy')
 // })
@@ -166,6 +166,45 @@ router.get('/getloc',async(req,res)=>{
     res.send(loc)
 })
 
-module.exports= router    
+
+router.get('/getuser',async(req,res)=>{
+    const user = req.query.name;
+    console.log(user)
+    const use = await UserSchema.find({username:req.query.name})
+    res.send(use)
+})
+
+router.get('/getlocservices',async(req,res)=>{
+    const title = req.query.title;    
+    console.log(title);
+    const locservice = await serviceSchema.find({service_title:req.query.title})
+    res.send(locservice)
+})
+
+router.put('/updateuser',async(req,res)=>{
+    const id= req.query.id;
+    console.log(id)
+    const user = await UserSchema.findByIdAndUpdate(req.query.id,
+        {
+            username:req.body.username,
+            email:req.body.email,
+            phonenumber:req.body.phonenumber,
+        })
+    user.save()
+    res.send(user)
+})
+router.put('/addaddress',async(req,res)=>{
+    const id= req.query.id;
+    console.log(id)
+    console.log(req.body.address)
+    const location = await UserSchema.findByIdAndUpdate(req.query.id,
+        {
+            addresses:req.body.address
+        })
+    location.save()
+    res.send(location)
+})
+module.exports= router   
+
 
 
