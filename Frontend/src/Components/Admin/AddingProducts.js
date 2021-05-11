@@ -35,8 +35,8 @@ const AddingProducts = ({items,onChange}) => {
     return (
         <div>
             <div style={{textAlign:'center'}}>
-                <Link to='/admin/addproducts'style={{margin:'20px',cursor: 'pointer',fontSize: '14px',color: 'rgb(255, 255, 255)',background: 'rgb(243, 198, 98)',padding: '8px 20px',borderRadius: '30px',fontWeight: 'bold'}}>Create New Product</Link>
-                <h4><input type="text" name="search" placeholder="Search.. &#128270; " onChange={search} className='input_text_container'></input></h4>
+                <Link to='/admin/addproducts'style={{margin:'20px',cursor: 'pointer',fontSize: '14px',color: 'rgb(255, 255, 255)',background: 'rgb(243, 198, 98)',padding: '8px 20px',borderRadius: '30px',fontWeight: 'bold'}}>Create New Product</Link><br/>
+                <h4 style={{marginTop:'50px'}}><input type="text" name="search" placeholder="Search.. &#128270; " onChange={search} className='input_text_container'></input></h4>
            </div>
            <div className='cards' >  
            {/* style={{display:'grid',gridTemplateColumns:'repeat(2, 2fr)',marginLeft:'5%'}} */}
@@ -61,9 +61,9 @@ const AddingProducts = ({items,onChange}) => {
                             <img src={data.image} style={{width:'200px',height:'200px',overflow:'hidden',objectFit:'cover'}}/>
                             </div>
                             <div style={{display:'inline-block',textAlign:'center'}}>                            
-                            <h4>{data.name}</h4>
-                                <h4>Unit:<input type='text' style={{borderRadius:'10px',width:'15vh',padding:'5px',margin:'5px'}} onChange={(e)=>{setUnits(e.target.value)}}/></h4>
-                                <h4>Price:<input type='text' style={{borderRadius:'10px',width:'15vh',padding:'5px',margin:'5px'}} onChange={(e)=>{setPrices(e.target.value)}}/></h4>
+                            <h4  style={{fontSize:'20px'}}>{data.name}</h4>
+                                <h4  style={{fontSize:'18px'}}>Unit:<input type='text' style={{borderRadius:'10px',width:'15vh',padding:'5px',margin:'5px'}} onChange={(e)=>{setUnits(e.target.value)}}/></h4>
+                                <h4  style={{fontSize:'18px'}}>Price:<input type='text' style={{borderRadius:'10px',width:'15vh',padding:'5px',margin:'5px'}} onChange={(e)=>{setPrices(e.target.value)}}/></h4>
                                 <button onClick={add} style={{margin:'10px',cursor: 'pointer',fontSize: '14px',color: 'rgb(255, 255, 255)',background: 'rgb(255, 102, 102)',padding: '8px 20px',borderRadius: '30px',fontWeight: 'bold'}}>Add</button>
                             </div>
                             </div>

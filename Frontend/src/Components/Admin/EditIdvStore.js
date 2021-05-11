@@ -68,7 +68,7 @@ const EditIdvStore = (props) => {
         }
         console.log(newStore)
         axios.put(`http://localhost:5000/getidvstore?_id=${store._id}`,newStore)
-        history.goBack()
+        history.push()
         
     }
     return (
@@ -79,15 +79,16 @@ const EditIdvStore = (props) => {
         </div>
         </div>
         <div className='container' style={{marginTop:'10px',boxShadow: 'rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px' ,textAlign:'center'}}>
-            <h4>Title: </h4>      <input type='text' value={title} style={{borderRadius:'10px',width:'50vh',padding:'5px',margin:'5px'     ,textAlign:'center'}}      onChange={(e)=>{setTitle(e.target.value)}}/>
-            <h4>Image </h4>       <input type='text' value={img_url} style={{borderRadius:'10px',width:'50vh',padding:'5px',margin:'5px'   ,textAlign:'center'}} onChange={(e)=>{setImg_url(e.target.value)}}/> 
-            <h4>Category :</h4>   <input type='text' value={category} style={{borderRadius:'10px',width:'50vh',padding:'5px',margin:'5px'  ,textAlign:'center'}} onChange={(e)=>{setCategory(e.target.value)}}/>   
-            <h4>Description :</h4><input type='text' value={desc} style={{borderRadius:'10px',width:'50vh',padding:'5px',margin:'5px'      ,textAlign:'center'}} onChange={(e)=>{setDesc(e.target.value)}}/>    
-            <h4>Location:  </h4>  
+            <h4  style={{fontSize:'18px'}}>Title: </h4>      <input type='text' value={title} style={{borderRadius:'10px',width:'50vh',padding:'5px',margin:'5px'     ,textAlign:'center'}}      onChange={(e)=>{setTitle(e.target.value)}}/>
+            <h4  style={{fontSize:'18px'}}>Image </h4>       <input type='text' value={img_url} style={{borderRadius:'10px',width:'50vh',padding:'5px',margin:'5px'   ,textAlign:'center'}} onChange={(e)=>{setImg_url(e.target.value)}}/> 
+            <h4  style={{fontSize:'18px'}}>Category :</h4>   <input type='text' value={category} style={{borderRadius:'10px',width:'50vh',padding:'5px',margin:'5px'  ,textAlign:'center'}} onChange={(e)=>{setCategory(e.target.value)}}/>   
+            <h4  style={{fontSize:'18px'}}>Description :</h4><input type='text' value={desc} style={{borderRadius:'10px',width:'50vh',padding:'5px',margin:'5px'      ,textAlign:'center'}} onChange={(e)=>{setDesc(e.target.value)}}/>    
+            <h4  style={{fontSize:'18px'}}>Location:  </h4>  
             {
                 locations.map((details,i)=>{
                     return(
                         <div key={i}>
+                        
                         <input type='checkbox' id={details.location_name} value={details.location_name}  onChange={(e)=>{
                             if(selectedLocations.indexOf(e.target.value)===-1)
                             setSelectedLocations([...selectedLocations,e.target.value])
@@ -99,7 +100,7 @@ const EditIdvStore = (props) => {
                     )
                 })
             }<br/>
-            <div className='cards' >  
+            <div className='cards' > 
             {
             items.map((item,i)=>{
                 setTimeout(()=>{setUnit(item.unit)
@@ -113,11 +114,11 @@ const EditIdvStore = (props) => {
                             <img src={item.image} style={{width:'200px',height:'200px',overflow:'hidden',objectFit:'cover'}}/>
                             </div>
                             <div style={{display:'inline-block',textAlign:'center'}}>                            
-                            <h4>{item.name} <i className='fas fa-pen' /></h4>
-                                <h4>Unit: <input id='uni' type='text' placeholder={item.unit} style={{borderRadius:'10px',width:'15vh',padding:'5px',margin:'5px'}} onChange={(e)=>{
+                            <h4 style={{fontSize:'18px'}}>{item.name} <i className='fas fa-pen' /></h4>
+                                <h4 style={{fontSize:'18px'}}>Units: <input id='uni' type='text' placeholder={item.unit} style={{borderRadius:'10px',width:'15vh',padding:'5px',margin:'5px',fontSize:'14px'}} onChange={(e)=>{
                                     setTempunit(e.target.value)
                                     setUnit(e.target.value)}}/></h4>
-                                <h4>Price:<input type='text' placeholder={item.price} style={{borderRadius:'10px',width:'15vh',padding:'5px',margin:'5px'}} onChange={(e)=>{setTempprice(e.target.value)}}/></h4>
+                                <h4  style={{fontSize:'18px'}}>Price:<input type='text' placeholder={item.price} style={{borderRadius:'10px',width:'15vh',padding:'5px',margin:'5px',fontSize:'14px'}} onChange={(e)=>{setTempprice(e.target.value)}}/></h4>
                                 <button onClick={()=>{
                                     console.log(tempunit)
                                     var moditem = {

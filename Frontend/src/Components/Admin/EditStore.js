@@ -37,7 +37,7 @@ const EditStore = () => {
     return (
         <div style={{marginTop:'50px'}}>
         <div style={{width:'99%',backgroundColor:'rgb(239, 127, 67)',height:'auto',marginTop:'50px',borderRadius:'10px',marginLeft:'10px',textAlign:'center',overflow:'hidden'}}>
-            <div className='container' style={{color:'black',padding:'100px'}}><h4 style={{fontSize:'40px',fontWeight:'350'}}>Choose the store from {localStorage.getItem('selectedservice')}</h4>
+            <div className='container' style={{color:'black',padding:'100px'}}><h4 style={{fontSize:'40px',fontWeight:'350'}}>Choose store from {localStorage.getItem('selectedservice')}</h4>
         </div>
         </div>
       <div className='container'>
@@ -56,7 +56,7 @@ const EditStore = () => {
                             <img src={stores.img_url} style={{width:'200px',height:'200px',overflow:'hidden',objectFit:'cover'}}/>
                             </div>
                             <div style={{display:'inline-block',textAlign:'center'}}>                            
-                            <h4>{stores.title}</h4>
+                            <h4  style={{fontSize:'16 px'}}>{stores.title}</h4>
                                 <h6>{stores.description}</h6>
                                 <Link to={'/admin/editidvstore/'+stores._id}><button style={{margin:'10px',cursor: 'pointer',fontSize: '14px',color: 'rgb(255, 255, 255)',background: 'rgb(255, 102, 102)',padding: '8px 20px',borderRadius: '30px',fontWeight: 'bold'}}>Edit</button></Link>
                                 <button onClick={()=>{
