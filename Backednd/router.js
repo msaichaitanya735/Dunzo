@@ -68,6 +68,13 @@ router.get('/getservices',async(req,res)=>{
     res.send(services)
 })
 
+router.get('/getlocservices',async(req,res)=>{
+    const title = req.query.title;    
+    console.log(title);
+    const locservice = await serviceSchema.find({service_title:req.query.title})
+    res.send(locservice)
+})
+
 router.post('/addservice',(req,res)=>{
     var newService= new serviceSchema({
         service_title:req.body.service_title,
