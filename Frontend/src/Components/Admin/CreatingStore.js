@@ -29,8 +29,8 @@ const CreatingStore = (props) => {
             items:JSON.stringify(items)
         }
         console.log(newStore)
-        // axios.post('http://localhost:5000/addstore',newStore).then((res)=>console.log('done'))
-        // var available_services=[]
+        axios.post('http://localhost:5000/addstore',newStore).then((res)=>console.log('done'))
+        //var available_services=[]
         console.log(locations)
         console.log(availLocations)
         availLocations.forEach((loc)=>{
