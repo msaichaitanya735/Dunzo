@@ -4,6 +4,7 @@ import Routing from './Components/Admin/Routing';
 import UserlsPage from './Components/UserLoginPage/UserlsPage'
 import UserMainPage from './Components/UserLoginPage/UserMainPage'
 import Fpassword from './Components/UserLoginPage/forgotPassword'
+import Dashboard from './Components/Dashboard/Dashboard'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/user" component={UserMainPage}/>
         <Route path="/fpass" component={Fpassword}/>
         </Router>
+        <Dashboard/>
     </div>
   );
 }

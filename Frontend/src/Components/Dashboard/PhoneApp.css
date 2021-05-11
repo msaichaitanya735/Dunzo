@@ -1,0 +1,27 @@
+.phone_app_container{
+    background-color: #F0f8FF;
+    display: flex;
+    height: 200px;
+    width: 100%;
+    
+}
+
+.phone_img{
+    height: 130%;
+    width: 185px;
+    position: relative;
+    left: 450px;
+    bottom: 60px;
+}
+
+.phone_app_detail{
+    font-size: 1.5rem;
+    line-height: 10px;
+    position: relative;
+    left: 500px;
+    margin-top: 50px;
+}
+
+.google_apple_btn{
+    margin-top: 35px;
+}
