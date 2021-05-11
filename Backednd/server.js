@@ -19,6 +19,7 @@ mongoose.connect("mongodb://cts_proj:12345@cluster0-shard-00-00.6jokf.mongodb.ne
         })
 
 app.use('/',router)
+app.use("/auth", require("./auth"));
 
 if(process.env.NODE_ENV==='production'){
     app.use(express.static(path.join(__dirname,'../Frontend/build')))
