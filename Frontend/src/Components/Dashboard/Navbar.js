@@ -3,6 +3,7 @@ import axios from 'axios'
 import Modal from 'react-modal';
 import './Navbar.css';
 import LocationForm from './LocationForm';
+import { Link } from 'react-router-dom';
 
 Modal.setAppElement('#root')
 const Navbar = (props) => {
@@ -44,7 +45,9 @@ const Navbar = (props) => {
                             <li className="nav-item cart">
                                 <a className="nav-link" href="#"><i className="fas fa-shopping-cart"></i></a>
                             </li>&nbsp;&nbsp;&nbsp;
-                            <button type="button" className="btn btn-primary btn-sm sign_in_btn">Sign in</button>
+                            <Link to="/user/dashboard">
+                            <img src="https://www.juniper.net/assets/img/setup/user.svg" style={{width:"50px",height:"50px",cursor:"pointer"}} alt="" />
+                            </Link>
                         </ul>
                     </div>
                 </div>
