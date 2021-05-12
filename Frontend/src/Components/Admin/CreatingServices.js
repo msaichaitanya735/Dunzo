@@ -9,6 +9,7 @@ const CreatingServices = () => {
     const [img,setImg]= useState('');
     const [desc,setDesc]=useState('');
     const history = useHistory();
+    const [error,setError]=useState(0);
 
 
     const submit=()=>{
@@ -22,19 +23,41 @@ const CreatingServices = () => {
         history.push('/admin')
     }
     return (
-        <div className='container' style={{flexWrap:'wrap',width:'70vh',height:'50vh',boxShadow: 'rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px'}}>
-            <div style={{height:'10vh'}}></div>
-            <div>
-            <label>Service Title:</label>
-            <input type='text' id='title' onChange={(e)=>setTitle(e.target.value)}/><br/>
-            </div>
-            <div>
-            <label>Image:</label>
-            <input type='text'id='img' onChange={(e)=>setImg(e.target.value)}/>
-            </div>
-            <label>Description</label>
-            <input type='text' id='description' onChange={(e)=>setDesc(e.target.value)}/>
-            <button onClick={submit}> Submit </button>
+        <div>
+            <div style={{width:'99%',backgroundColor:'#171e30',height:'250px',marginTop:'50px',borderRadius:'10px',marginLeft:'10px',textAlign:'center'}}>
+            <div className='container' style={{color:'white',padding:'100px'}}><h4 style={{fontSize:'40px',fontWeight:'300'}}>Creating New Service </h4>
+        </div>
+        </div>
+        <div className='container' style={{marginTop:'10px',boxShadow: 'rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px' ,textAlign:'center'}}>
+            <h4>Service Title:   </h4>  <input type='text' style={{borderRadius:'10px',width:'50vh',padding:'5px',margin:'5px'}}  onChange={(e)=>{
+                if (e.target.value === null || e.target.value === "") {
+                setError(0);
+                } else {
+                var regExp = /^[a-zA-Z ]{5,30}$/;
+                if (!regExp.test(e.target.value)) {
+                setError(0);
+      } else {
+        setError(error+1);
+      }
+    }
+                setTitle(e.target.value)
+                }}/>
+            <h4>Image: </h4>  <input type='text' style={{borderRadius:'10px',width:'50vh',padding:'5px',margin:'5px'}} onChange={(e)=>{
+                if (e.target.value === null || e.target.value === "") {
+                setError(0);
+                } else {
+                var regExp = /^[a-zA-Z ]{5,30}$/;
+                if (!regExp.test(e.target.value)) {
+                setError(0);
+      } else {
+        setError(error+1);
+      }
+    }
+    setImg(e.target.value)}}/> 
+            <h4>Description :        </h4>  <input type='text' style={{borderRadius:'10px',width:'50vh',padding:'5px',margin:'5px'}} onChange={(e)=>{setDesc(e.target.value)}}/>   
+           <br/>
+           <button onClick={submit} style={{ textAlign:'center', margin:'20px',cursor: 'pointer',fontSize: '14px',color: 'rgb(255, 255, 255)',background: 'rgb(0, 210, 144)',padding: '8px 20px',borderRadius: '30px',fontWeight: 'bold'}}>Submit</button>  
+        </div>
         </div>
     )
 }

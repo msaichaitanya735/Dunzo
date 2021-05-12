@@ -27,7 +27,7 @@ const sendMailer = ( email,userid) => {
            <h3>Hello </h3>
            <p>Thank you for registering into our application.</p>
             
-            <p>To activate your account please follow this link:<a target="_" href="http://localhost:4000/auth/verify/${userid}">Activate Link</a></p>
+            <p>To activate your account please follow this link:<a target="_" href="http://localhost:5000/auth/verify/${userid}">Activate Link</a></p>
             <p>Cheers</p>
             <p>Your application team</p>
             `
