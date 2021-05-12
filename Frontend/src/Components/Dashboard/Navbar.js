@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import './Navbar.css';
 import LocationForm from './LocationForm';
 import { Link } from 'react-router-dom';
+import Partners from './Partners'
 
 Modal.setAppElement('#root')
 const Navbar = (props) => {
@@ -37,13 +38,19 @@ const Navbar = (props) => {
                                     props.changeLoc(loc)}}>Get Services</button>
                             </li>
                             <li className="nav-item dfp">
-                                <a className="nav-link active" href="#">Dunzo for Partners</a>
+                                <Link to="/Partners">
+                                <a className="nav-link active">Dunzo for Partners</a>
+                                </Link>
                             </li>
                             <li className="nav-item ndp">
+                                <Link to="/Partners">
                                 <a className="nav-link" href="#">Need Delivery Partners?</a>
+                                </Link>
                             </li>
                             <li className="nav-item cart">
+                            <Link to="/Cart">
                                 <a className="nav-link" href="#"><i className="fas fa-shopping-cart"></i></a>
+                            </Link>
                             </li>&nbsp;&nbsp;&nbsp;
                             <Link to="/user/dashboard">
                             <img src="https://www.juniper.net/assets/img/setup/user.svg" style={{width:"50px",height:"50px",cursor:"pointer"}} alt="" />

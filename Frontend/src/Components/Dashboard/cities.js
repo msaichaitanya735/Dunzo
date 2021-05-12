@@ -1,5 +1,5 @@
-{
-  "cities": [
+const city_data={
+  cities: [
     {
         "id": "1",
         "name": "Mumbai",
@@ -6105,5 +6105,7 @@
        "name":"Dispur",
        "state":"Assam"
     }
-]
+    ],
 }
+
+export default city_data;
