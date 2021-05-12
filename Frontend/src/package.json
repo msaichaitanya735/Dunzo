@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "json:server": "json-server --watch cities.json"
+    
   },
   "author": "",
   "license": "ISC",

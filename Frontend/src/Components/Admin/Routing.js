@@ -10,6 +10,8 @@ import EditingService from './EditingService'
 import EditStore from './EditStore'
 import Dashboard from '../Dashboard/Dashboard'
 import Userdashboard from '../UserDashboard/Userdashboard'
+import Final from '../Cart/Final'
+import Partners from '../Dashboard/Partners'
 
 
 
@@ -28,6 +30,8 @@ const Routing = () => {
                 <Route path="/admin/editservice"><EditingService/></Route>
                 <Route path="/admin/editstore"><EditStore/></Route>
                 <Route path="/Dashboard"><Dashboard/></Route>
+                <Route path="/Cart"><Final/></Route>
+                <Route path="/Partners"><Partners/></Route>
                 <Route path="/admin/editidvstore/:_id" component={EditIdvStore}/>
             </Switch>
         </Router>

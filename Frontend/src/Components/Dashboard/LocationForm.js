@@ -2,6 +2,7 @@ import { Input } from "antd";
 import { useCombobox } from "downshift";
 import React, { useEffect, useState } from "react";
 import Decider from './Decider';
+import city_data from "./cities";
 
 function LocationForm(props) {
   const [inputItems, setInputItems] = useState([])
@@ -9,10 +10,15 @@ function LocationForm(props) {
   const [singleLocation, setSingleLocation] = useState("")
   const [ loc, setLoc] = useState('Set Location')
 
+  const {cities} = city_data
+
   useEffect(() => {
-    fetch("http://localhost:3000/cities")
-      .then((response) => response.json())
-      .then((data) => setLocation(data))
+
+    console.log(cities)
+
+    setLocation(cities);
+
+    
   }, [])
 
   const {
